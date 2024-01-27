@@ -19,15 +19,25 @@ const StopWatchButton = ({
   return (
     <div className="stopWatchButtonsContainer">
       <button
+        className="stopwatchButton"
         id="startStopClick"
         onClick={isRunning ? stopStopwatch : startStopwatch}
       >
         {isRunning ? "Stop" : "Start"}
       </button>
-      <button id="lapClick" onClick={addLap} disabled={!isRunning}>
+      <button
+        className="stopwatchButton"
+        id="lapClick"
+        onClick={addLap}
+        disabled={!isRunning}
+      >
         Lap
       </button>
-      <button id="resetClick" onClick={resetStopwatch}>
+      <button
+        className="stopwatchButton"
+        id="resetClick"
+        onClick={resetStopwatch}
+      >
         Reset
       </button>
     </div>

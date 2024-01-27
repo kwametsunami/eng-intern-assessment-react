@@ -1,0 +1,28 @@
+@use "./variables" as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: black;
+  .shopiwatch {
+    display: flex;
+    align-items: center;
+    &:hover {
+      .siteLogo {
+        color: $green;
+      }
+    }
+    .shopiwatchLogo {
+      width: 65px;
+      height: 65px;
+      margin-left: 10px;
+      padding: 15px 5px 15px 15px;
+    }
+    .siteLogo {
+      margin: 0 0 20px 0;
+      padding-top: 20px;
+    }
+  }
+}

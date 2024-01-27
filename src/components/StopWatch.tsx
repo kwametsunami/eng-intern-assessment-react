@@ -10,12 +10,12 @@ type Props = {
 const StopWatch = ({ formatTime, time, laps }: Props) => {
   return (
     <section className="stopwatch">
-      <div className="stopwatch">
+      <div className="timeDisplay">
         <h2>{formatTime(time)}</h2>
       </div>
       <div className="laps">
         <div className="lapTitle">
-          <h2>laps</h2>
+          <h3 className="lapTitleFont">laps</h3>
         </div>
         {/* map out lap array from state and format it as mm:ss:ms */}
         {laps.length > 0 && (

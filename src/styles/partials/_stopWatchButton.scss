@@ -1,0 +1,16 @@
+@use "./variables" as *;
+
+.stopWatchButtonsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .stopwatchButton {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: calc(33% - 5px);
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}

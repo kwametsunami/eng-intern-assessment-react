@@ -8,9 +8,10 @@
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./", // Add this line
+    "baseUrl": "./",
     "paths": {
-      "*": ["src/*"] // Add this line
+      "*": ["src/*"]
     }
-  }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"]
 }

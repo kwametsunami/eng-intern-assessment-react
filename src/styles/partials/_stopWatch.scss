@@ -1,0 +1,43 @@
+@use "./variables" as *;
+
+.stopwatch {
+  width: 100%;
+  .timeDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .laps {
+    position: fixed;
+    top: 27.5%;
+    left: 0;
+    padding: 0 15px 20px 0px;
+    height: 40%;
+    overflow: scroll;
+    width: 12.5%;
+    font-family: "Silkscreen", sans-serif;
+    border: 2px solid white;
+    border-left: none;
+    border-radius: 0 15px 15px 0;
+    background: black;
+    color: white;
+    .lapTitle {
+      position: sticky;
+      top: 5%;
+      z-index: 1;
+      background: black;
+      border-bottom: 2px solid white;
+      .lapTitleFont {
+        margin: 0 0 0 20px;
+      }
+    }
+    .lapContainer {
+      position: absolute;
+      top: 20%;
+      padding-left: 65px;
+      height: 80%;
+      width: 60%;
+      flex-direction: row-reverse;
+    }
+  }
+}

@@ -1,4 +1,52 @@
-// test
+@use "./variables" as *;
+
 body {
-  background-color: green;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+  &:hover {
+    color: $green;
+  }
+}
+
+h1 {
+  color: $white;
+  font-family: $logo;
+  font-size: 45px;
+  font-weight: 900;
+  letter-spacing: -3px;
+  transform: skew(352deg);
+}
+
+h2 {
+  font-family: $display;
+  font-size: 90px;
+  cursor: default;
+}
+
+h3 {
+  font-family: $laps;
+  font-size: 40px;
+  cursor: default;
+}
+
+button {
+  border: none;
+  background: transparent;
+  font-family: $laps;
+  cursor: pointer;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  li {
+    font-family: $laps;
+    font-size: clamp(1.25rem, 1.225rem + 0.125vw, 1.375rem);
+  }
 }

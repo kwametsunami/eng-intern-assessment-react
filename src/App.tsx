@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "./styles/styles.scss";
 
+import Header from "./components/Header";
 import StopWatch from "./components/StopWatch";
 import StopWatchButton from "./components/StopWatchButton";
 
@@ -77,7 +78,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <section className="App">
+    <main className="App">
+      <Header />
       <div className="stopWatchContainer">
         <StopWatchButton
           startStopwatch={startStopwatch}
@@ -88,7 +90,7 @@ const App: React.FC = () => {
         />
         <StopWatch formatTime={formatTime} time={time} laps={laps} />
       </div>
-    </section>
+    </main>
   );
 };
 
