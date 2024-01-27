@@ -19,10 +19,12 @@ const StopWatch = ({ formatTime, time, laps }: Props) => {
         </div>
         {/* map out lap array from state and format it as mm:ss:ms */}
         {laps.length > 0 && (
-          <div className="lapContainer">
+          <div className="lapContainer" data-testid="laps">
             <ol>
               {laps.map((lap, index) => (
-                <li key={index}>{formatTime(lap)}</li>
+                <li key={index} data-testid="lap-time">
+                  {formatTime(lap)}
+                </li>
               ))}
             </ol>
           </div>

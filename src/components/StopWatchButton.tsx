@@ -22,13 +22,13 @@ const StopWatchButton = ({
         id="startStopClick"
         onClick={isRunning ? stopStopwatch : startStopwatch}
       >
-        {isRunning ? "stop" : "start"}
+        {isRunning ? "Stop" : "Start"}
       </button>
       <button id="lapClick" onClick={addLap} disabled={!isRunning}>
-        lap
+        Lap
       </button>
       <button id="resetClick" onClick={resetStopwatch}>
-        reset
+        Reset
       </button>
     </div>
   );
