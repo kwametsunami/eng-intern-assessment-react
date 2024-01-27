@@ -5,6 +5,7 @@ import "./styles/styles.scss";
 import Header from "./components/Header";
 import StopWatch from "./components/StopWatch";
 import StopWatchButton from "./components/StopWatchButton";
+import LightButton from "./components/LightButton";
 
 const App: React.FC = () => {
   // states
@@ -14,6 +15,7 @@ const App: React.FC = () => {
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [time, setTime] = useState<number>(0);
   const [laps, setLaps] = useState<number[]>([]);
+  const [light, setLight] = useState<boolean>(false);
 
   // create a way to count numbers by a certain interval (milliseconds) to store into an array to display
   // have isRunning in the dependancy array to trigger counting the clock
@@ -80,15 +82,43 @@ const App: React.FC = () => {
   return (
     <main className="App">
       <Header />
-      <div className="stopWatchContainer">
-        <StopWatchButton
-          startStopwatch={startStopwatch}
-          stopStopwatch={stopStopwatch}
-          resetStopwatch={resetStopwatch}
-          isRunning={isRunning}
-          addLap={addLap}
-        />
-        <StopWatch formatTime={formatTime} time={time} laps={laps} />
+      <div className="lightBorder">
+        <div className="outerBorder">
+          <div
+            className="clockBody"
+            id={isRunning ? "start" : time === 0 ? "idle" : "stop"}
+          >
+            <div className="topLabels">
+              <div className="stopwatchLogo">
+                <h3 className="stopwatchLogoTitle">kwame</h3>
+              </div>
+              <div className="miniLabels">
+                <p id="startStop">start-stop</p>
+                <p id="watchName">
+                  timekeeper<span id="decorations">&lt;&lt;&lt;</span>
+                </p>
+              </div>
+            </div>
+            <div className="bottomLabels">
+              <p className="markers">min</p>
+              <p className="markers">sec</p>
+              <p className="markers">ms</p>
+            </div>
+            <div className={`stopWatchContainer ${light ? "lightOn" : ""}`}>
+              <StopWatchButton
+                startStopwatch={startStopwatch}
+                stopStopwatch={stopStopwatch}
+                resetStopwatch={resetStopwatch}
+                isRunning={isRunning}
+                addLap={addLap}
+              />
+              <StopWatch formatTime={formatTime} time={time} laps={laps} />
+            </div>
+          </div>
+        </div>
+        <div className="lightButton">
+          <LightButton light={light} setLight={setLight} />
+        </div>
       </div>
     </main>
   );

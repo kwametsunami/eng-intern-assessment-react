@@ -1,13 +1,26 @@
-// fonts
+// font imports
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Workbench&display=swap");
 
+// fonts
 $logo: Helvetica Neue;
 $display: "VT323", monospace;
 $laps: "Silkscreen", sans-serif;
+$wLabels: "Cute Font", sans-serif;
+$wLogo: "Workbench", sans-serif;
 
 // colors
 $green: #95bf47;
+$orange: #f5c05d;
+$ygreen: #9acd32;
+$neon: #ffff71;
+$blue: #0000ff;
+$darkgreen: #038b03;
+$red: #f73636;
 $white: #ebebeb;
-$grey: #a5a5a5;
+$grey: #d7d7d7;
+$darkgrey: #6d6c6c;
+$brown: #962626;
 $black: #0c0c0c;

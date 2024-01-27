@@ -7,14 +7,128 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  .stopWatchContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 50px 30px 50px;
-    background-color: $grey;
-    border: 7px double black;
-    border-radius: 10px;
+  .lightBorder {
+    border: 12.5px solid $black;
+    border-radius: 30px;
+    padding: 2px;
+    background: $white;
+    position: relative;
+    .lightButton {
+      position: absolute;
+      top: 40%;
+      right: 0;
+    }
+    .outerBorder {
+      padding: 20px;
+      border: 3px solid $white;
+      border-radius: 20px;
+      background: $black;
+      position: relative;
+      .clockBody {
+        padding: 75px 30px 45px;
+        border-radius: 10px;
+        background-color: $black;
+        position: relative;
+        .topLabels {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          top: 0%;
+          left: 10%;
+          width: 100%;
+          .stopwatchLogo {
+            display: flex;
+            border-bottom: 2px solid $white;
+            width: 38.5%;
+            text-transform: uppercase;
+            .stopwatchLogoTitle {
+              color: $white;
+              margin: 0;
+              padding-left: 20px;
+              font-family: $wLabels;
+              letter-spacing: 15px;
+              font-size: 35px;
+              transform: scaleY(0.8);
+            }
+          }
+          .miniLabels {
+            display: flex;
+            width: 70%;
+            justify-content: space-between;
+            padding-left: 20px;
+            margin: 0;
+            p {
+              font-size: 20px;
+              margin: 0;
+              padding-top: 5px;
+            }
+            #startStop {
+              font-family: $wLabels;
+              font-size: 30px;
+              transform: translateY(-7px) scaleY(0.8);
+              text-transform: uppercase;
+              color: $white;
+              &::before {
+                content: "■";
+                position: absolute;
+                left: -21px;
+                top: 5px;
+                color: $brown;
+              }
+            }
+            #watchName {
+              font-family: $wLogo;
+              font-size: 28px;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              transform: translateY(-22px) translateX(38px);
+              color: $ygreen;
+              #decorations {
+                letter-spacing: -5px;
+              }
+            }
+          }
+        }
+        .bottomLabels {
+          position: absolute;
+          display: flex;
+          justify-content: space-evenly;
+          bottom: -2.5%;
+          width: 85%;
+          .markers {
+            font-family: $wLabels;
+            font-size: 40px;
+            margin: 0;
+            color: $orange;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            transform: scaleY(0.8);
+          }
+        }
+
+        .stopWatchContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 20px 50px 30px 50px;
+          background-color: $grey;
+          border: 7px double $black;
+          border-radius: 10px;
+        }
+        .lightOn {
+          background-color: $neon;
+        }
+      }
+      #idle {
+        border: 5px solid $blue;
+      }
+      #start {
+        border: 5px solid $darkgreen;
+      }
+      #stop {
+        border: 5px solid $red;
+      }
+    }
   }
 }

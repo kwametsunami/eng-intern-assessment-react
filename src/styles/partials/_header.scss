@@ -5,13 +5,17 @@
   top: 0;
   left: 0;
   width: 100vw;
-  background: black;
+  background: $black;
   .shopiwatch {
     display: flex;
     align-items: center;
     &:hover {
       .siteLogo {
-        color: $green;
+        color: $white;
+        animation: highlight 0.8s ease-in-out;
+      }
+      .shopiwatchLogo {
+        animation: rotate 0.8s ease-in-out;
       }
     }
     .shopiwatchLogo {
@@ -24,5 +28,34 @@
       margin: 0 0 20px 0;
       padding-top: 20px;
     }
+  }
+}
+
+// animations
+@keyframes highlight {
+  0% {
+    transform: translateX(0) skew(352deg);
+    color: $white;
+  }
+  30% {
+    color: $ygreen;
+  }
+  50% {
+    transform: translateX(5px) skew(352deg);
+  }
+  100% {
+    transform: translateX(0) skew(352deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-7deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }

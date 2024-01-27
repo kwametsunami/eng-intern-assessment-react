@@ -11,7 +11,7 @@ const StopWatch = ({ formatTime, time, laps }: Props) => {
   return (
     <section className="stopwatch">
       <div className="timeDisplay">
-        <h2>{formatTime(time)}</h2>
+        <h2 className="formattedTime">{formatTime(time)}</h2>
       </div>
       <div className="laps">
         <div className="lapTitle">

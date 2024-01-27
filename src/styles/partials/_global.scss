@@ -9,7 +9,7 @@ a {
   text-decoration: none;
   color: $white;
   &:hover {
-    color: $green;
+    color: $white;
   }
 }
 
@@ -30,7 +30,7 @@ h2 {
 
 h3 {
   font-family: $laps;
-  font-size: 40px;
+  font-size: 45px;
   cursor: default;
 }
 
@@ -39,6 +39,9 @@ button {
   background: transparent;
   font-family: $laps;
   cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 ol {
@@ -47,6 +50,10 @@ ol {
   text-align: center;
   li {
     font-family: $laps;
-    font-size: clamp(1.25rem, 1.225rem + 0.125vw, 1.375rem);
+    font-size: 20px;
   }
+}
+
+p {
+  cursor: default;
 }
