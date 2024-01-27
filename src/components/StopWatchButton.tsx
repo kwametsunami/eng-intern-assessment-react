@@ -5,6 +5,7 @@ type Props = {
   startStopwatch: () => void;
   stopStopwatch: () => void;
   addLap: () => void;
+  resetStopwatch: () => void;
   isRunning: boolean;
 };
 
@@ -12,6 +13,7 @@ const StopWatchButton = ({
   startStopwatch,
   stopStopwatch,
   addLap,
+  resetStopwatch,
   isRunning,
 }: Props) => {
   return (
@@ -25,7 +27,9 @@ const StopWatchButton = ({
       <button id="lapClick" onClick={addLap} disabled={!isRunning}>
         lap
       </button>
-      <button id="resetClick">reset</button>
+      <button id="resetClick" onClick={resetStopwatch}>
+        reset
+      </button>
     </div>
   );
 };

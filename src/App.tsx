@@ -32,6 +32,7 @@ const App: React.FC = () => {
   }, [isRunning]);
 
   // functions
+  // onClicks to start, stop, reset, and add a lap
   const startStopwatch = () => {
     setIsRunning(true);
     console.log("starting");
@@ -40,6 +41,12 @@ const App: React.FC = () => {
   const stopStopwatch = () => {
     setIsRunning(false);
     console.log("stopping");
+  };
+
+  const resetStopwatch = () => {
+    setIsRunning(false);
+    setTime(0);
+    setLaps([]);
   };
 
   // add lap to lap state array
@@ -76,6 +83,7 @@ const App: React.FC = () => {
         <StopWatchButton
           startStopwatch={startStopwatch}
           stopStopwatch={stopStopwatch}
+          resetStopwatch={resetStopwatch}
           isRunning={isRunning}
           addLap={addLap}
         />
