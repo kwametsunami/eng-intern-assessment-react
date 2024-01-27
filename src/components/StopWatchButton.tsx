@@ -4,12 +4,14 @@ import React from "react";
 type Props = {
   startStopwatch: () => void;
   stopStopwatch: () => void;
+  addLap: () => void;
   isRunning: boolean;
 };
 
 const StopWatchButton = ({
   startStopwatch,
   stopStopwatch,
+  addLap,
   isRunning,
 }: Props) => {
   return (
@@ -20,7 +22,9 @@ const StopWatchButton = ({
       >
         {isRunning ? "stop" : "start"}
       </button>
-      <button id="lapClick">lap</button>
+      <button id="lapClick" onClick={addLap} disabled={!isRunning}>
+        lap
+      </button>
       <button id="resetClick">reset</button>
     </div>
   );

@@ -42,6 +42,13 @@ const App: React.FC = () => {
     console.log("stopping");
   };
 
+  // add lap to lap state array
+  const addLap = () => {
+    // store lap at current time @ press
+    setLaps((prevLaps) => [...prevLaps, time]);
+    console.log(laps);
+  };
+
   // create a function that formats the time into mm:ss:ms to display
   const formatTime = (milliseconds: number): string => {
     // convert ms to ss
@@ -70,8 +77,9 @@ const App: React.FC = () => {
           startStopwatch={startStopwatch}
           stopStopwatch={stopStopwatch}
           isRunning={isRunning}
+          addLap={addLap}
         />
-        <StopWatch formatTime={formatTime} time={time} />
+        <StopWatch formatTime={formatTime} time={time} laps={laps} />
       </div>
     </section>
   );
