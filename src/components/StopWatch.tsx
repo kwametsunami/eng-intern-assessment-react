@@ -1,7 +1,16 @@
 import React from "react";
 
-const StopWatch = () => {
-  return <div className="stopwatch"></div>;
+// defined props
+type Props = {
+  time: number;
+};
+
+const StopWatch = ({ time }: Props) => {
+  return (
+    <div className="stopwatch">
+      <h2>{time}</h2>
+    </div>
+  );
 };
 
 export default StopWatch;
