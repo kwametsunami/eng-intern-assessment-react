@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 .stopwatch {
   width: 100%;
@@ -14,6 +15,7 @@
     position: fixed;
     top: 27.5%;
     left: 0;
+    bottom: 0;
     padding: 0 15px 20px 0px;
     height: 40%;
     overflow: scroll;
@@ -32,6 +34,17 @@
       border-bottom: 2px solid $white;
       .lapTitleFont {
         margin: 0 0 0 30px;
+        @include smallDesktop {
+          font-size: 35px;
+        }
+        @include tablet {
+          font-size: 25px;
+          margin: 0 90px;
+        }
+        @include mobileLarge {
+          font-size: 15px;
+          margin: 0 65px;
+        }
       }
     }
     .lapContainer {
@@ -41,6 +54,37 @@
       height: 80%;
       width: 60%;
       flex-direction: row-reverse;
+      @include smallDesktop {
+        padding-left: 40px;
+      }
+      @include tablet {
+        padding-left: 75px;
+      }
+      @include mobile {
+        padding-left: 35px;
+      }
+      .lapTimes {
+        @include smallDesktop {
+          font-size: 15px;
+        }
+        @include mobile {
+          font-size: 10px;
+        }
+      }
+    }
+    @include tablet {
+      position: fixed;
+      top: 0%;
+      left: 35%;
+      width: 30%;
+      height: 20%;
+      border-radius: 0 0 15px 15px;
+      border: 2px solid $white;
+    }
+    @include mobileLarge {
+      transform: scale(2);
+      top: -77%;
+      height: 30%;
     }
   }
 }

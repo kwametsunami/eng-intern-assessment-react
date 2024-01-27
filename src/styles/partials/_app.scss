@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 .App {
   position: relative;
@@ -129,6 +130,9 @@
       #stop {
         border: 5px solid $red;
       }
+    }
+    @include mobileLarge {
+      transform: scale(0.7);
     }
   }
 }

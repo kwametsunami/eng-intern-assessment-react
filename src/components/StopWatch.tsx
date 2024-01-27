@@ -22,7 +22,7 @@ const StopWatch = ({ formatTime, time, laps }: Props) => {
           <div className="lapContainer" data-testid="laps">
             <ol>
               {laps.map((lap, index) => (
-                <li key={index} data-testid="lap-time">
+                <li key={index} data-testid="lap-time" className="lapTimes">
                   {formatTime(lap)}
                 </li>
               ))}

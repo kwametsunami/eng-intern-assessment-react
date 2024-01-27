@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 .header {
   position: absolute;
@@ -23,11 +24,21 @@
       height: 65px;
       margin-left: 10px;
       padding: 15px 5px 15px 15px;
+      @include tablet {
+        width: 35px;
+        height: 35px;
+      }
     }
     .siteLogo {
       margin: 0 0 20px 0;
       padding-top: 20px;
+      @include tablet {
+        font-size: 35px;
+      }
     }
+  }
+  @include tablet {
+    top: 91%;
   }
 }
 
