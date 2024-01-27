@@ -1,0 +1,72 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: $black;
+  .shopiwatch {
+    display: flex;
+    align-items: center;
+    &:hover {
+      .siteLogo {
+        color: $white;
+        animation: highlight 0.8s ease-in-out;
+      }
+      .shopiwatchLogo {
+        animation: rotate 0.8s ease-in-out;
+      }
+    }
+    .shopiwatchLogo {
+      width: 65px;
+      height: 65px;
+      margin-left: 10px;
+      padding: 15px 5px 15px 15px;
+      @include tablet {
+        width: 35px;
+        height: 35px;
+      }
+    }
+    .siteLogo {
+      margin: 0 0 20px 0;
+      padding-top: 20px;
+      @include tablet {
+        font-size: 35px;
+      }
+    }
+  }
+  @include tablet {
+    top: 91%;
+  }
+}
+
+// animations
+@keyframes highlight {
+  0% {
+    transform: translateX(0) skew(352deg);
+    color: $white;
+  }
+  30% {
+    color: $ygreen;
+  }
+  50% {
+    transform: translateX(5px) skew(352deg);
+  }
+  100% {
+    transform: translateX(0) skew(352deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-7deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

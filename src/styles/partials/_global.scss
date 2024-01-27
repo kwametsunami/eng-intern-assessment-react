@@ -1,0 +1,60 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+}
+
+h1 {
+  color: $white;
+  font-family: $logo;
+  font-size: 45px;
+  font-weight: 900;
+  letter-spacing: -3px;
+  transform: skew(352deg);
+}
+
+h2 {
+  font-family: $display;
+  font-size: 90px;
+  cursor: default;
+}
+
+h3 {
+  font-family: $laps;
+  font-size: 45px;
+  cursor: default;
+}
+
+button {
+  border: none;
+  background: transparent;
+  font-family: $laps;
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  li {
+    font-family: $laps;
+    font-size: 20px;
+  }
+}
+
+p {
+  cursor: default;
+}
