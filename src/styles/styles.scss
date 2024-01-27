@@ -1,0 +1,10 @@
+@use "./partials/variables" as *;
+@use "./partials/global";
+
+// sections
+@use "./partials/app";
+@use "./partials/stopWatch";
+@use "./partials/stopWatchButton";
+
+// mixins
+@use "./partials/mixins" as *;

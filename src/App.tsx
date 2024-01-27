@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import "./styles/styles.scss";
+
 import StopWatch from "./components/StopWatch";
 import StopWatchButton from "./components/StopWatchButton";
 
@@ -35,12 +37,10 @@ const App: React.FC = () => {
   // onClicks to start, stop, reset, and add a lap
   const startStopwatch = () => {
     setIsRunning(true);
-    console.log("starting");
   };
 
   const stopStopwatch = () => {
     setIsRunning(false);
-    console.log("stopping");
   };
 
   const resetStopwatch = () => {
@@ -53,7 +53,6 @@ const App: React.FC = () => {
   const addLap = () => {
     // store lap at current time @ press
     setLaps((prevLaps) => [...prevLaps, time]);
-    console.log(laps);
   };
 
   // create a function that formats the time into mm:ss:ms to display
