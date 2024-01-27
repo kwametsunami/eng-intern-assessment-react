@@ -83,8 +83,9 @@
     }
     @include mobileLarge {
       transform: scale(2);
-      top: -77%;
+      top: -83%;
       height: 30%;
+      border-radius: 15px;
     }
   }
 }

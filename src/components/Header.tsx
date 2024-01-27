@@ -1,8 +1,9 @@
 import React from "react";
 
+// image import for logo
 import logo from "../assets/shopiwatchLogo.png";
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <nav className="header">
       <a className="shopiwatch" href="https://heykwa.me/">

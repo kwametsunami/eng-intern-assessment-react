@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 
+// style import
 import "./styles/styles.scss";
 
+// imports
 import Header from "./components/Header";
 import StopWatch from "./components/StopWatch";
 import StopWatchButton from "./components/StopWatchButton";
@@ -9,9 +11,6 @@ import LightButton from "./components/LightButton";
 
 const App: React.FC = () => {
   // states
-  // create states to check if the stopwatch is running or paused,
-  // store the time
-  // store the laps in an array
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [time, setTime] = useState<number>(0);
   const [laps, setLaps] = useState<number[]>([]);
