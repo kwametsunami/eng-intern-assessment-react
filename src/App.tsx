@@ -21,8 +21,10 @@ const App: React.FC = () => {
     // if statement saying if isRunning is true, let the clockinterval increase by 10 milliseconds and then store to 'time' state
     if (isRunning) {
       clockInterval = setInterval(() => {
-        setTime((prevTime) => prevTime + 10); // Increment by 10 milliseconds
-      }, 10); // Set interval to 10 milliseconds
+        // increment by 10 milliseconds
+        setTime((prevTime) => prevTime + 10);
+        // set interval to 10 milliseconds
+      }, 10);
     }
 
     // cleanup function when isRunning changes
@@ -41,6 +43,25 @@ const App: React.FC = () => {
   };
 
   // create a function that formats the time into mm:ss:ms to display
+  const formatTime = (milliseconds: number): string => {
+    // convert ms to ss
+    const totalSeconds = Math.floor(milliseconds / 1000);
+    // calculate minutes by dividing totalSeconds
+    const minutes = Math.floor(totalSeconds / 60);
+    // take the remaining seconds after calculating minutes
+    const remainingSeconds = totalSeconds % 60;
+    // formats the milliseconds to limit to 2 digits
+    const formattedMilliseconds = String(milliseconds % 1000)
+      .padStart(3, "0")
+      .slice(0, -1);
+    // adds a zero to the minutes if its less than 10
+    const formattedMinutes = String(minutes).padStart(2, "0");
+    // adds a zero to seconds if its less than 10
+    const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+
+    //create a string to use as a display
+    return `${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`;
+  };
 
   return (
     <section className="App">
@@ -50,7 +71,7 @@ const App: React.FC = () => {
           stopStopwatch={stopStopwatch}
           isRunning={isRunning}
         />
-        <StopWatch time={time} />
+        <StopWatch formatTime={formatTime} time={time} />
       </div>
     </section>
   );
